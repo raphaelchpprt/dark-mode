@@ -2,9 +2,13 @@ import React, { useContext } from "react";
 import ThemeContext from "../context/ThemeContext";
 
 const Button = () => {
-  const { toggle } = useContext(ThemeContext);
+  const { theme, toggle } = useContext(ThemeContext);
 
-  return <button onClick={toggle}>Set X mode</button>;
+  return (
+    <button onClick={toggle}>
+      Set {theme === "light" ? "dark" : "light"} mode
+    </button>
+  );
 };
 
 export default Button;
